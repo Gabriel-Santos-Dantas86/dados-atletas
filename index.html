@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel de Atletas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Painel de Cadastro de Atletas</h1>
+        <p class="lead">Preencha os dados do atleta e visualize IMC, categoria e média válida automaticamente.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <aside class="card">
+        <form id="formAtleta">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" required placeholder="Nome completo" />
+          </div>
+
+          <div class="row">
+            <div class="form-group" style="flex:1">
+              <label for="idade">Idade</label>
+              <input id="idade" name="idade" type="number" min="1" required placeholder="Ex: 30" />
+            </div>
+            <div class="form-group" style="flex:1">
+              <label for="peso">Peso (kg)</label>
+              <input id="peso" name="peso" type="number" min="1" step="0.1" required placeholder="Ex: 80" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="altura">Altura (m)</label>
+            <input id="altura" name="altura" type="number" min="0.5" max="3" step="0.01" required placeholder="Ex: 1.70" />
+          </div>
+
+          <div class="form-group">
+            <label for="notas">Notas (separadas por vírgula)</label>
+            <textarea id="notas" name="notas" placeholder="Ex: 10, 9.34, 8.42, 10, 7.88" required></textarea>
+          </div>
+
+          <div class="btn-area">
+            <button type="button" id="btnLimpar" class="btn ghost">Limpar</button>
+            <button class="btn" type="submit">Cadastrar Atleta</button>
+          </div>
+        </form>
+      </aside>
+
+      <main>
+        <div class="card">
+          <div class="top-list">
+            <strong>Atletas Cadastrados</strong>
+            <div id="totalAtletas" class="total">0</div>
+          </div>
+
+          <div id="lista" class="list"></div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
